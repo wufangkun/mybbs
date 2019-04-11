@@ -12,6 +12,11 @@ class UserController extends CommonController
     	// 显示 create.html 文件
     	$this->display();
     }
+    public function createa()
+    {
+        // 显示 create.html 文件
+        $this->display();
+    }
 
     // 接收表单数据，保存到数据库
     public function save()
