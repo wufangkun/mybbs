@@ -3,3 +3,15 @@ INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
 
+[ 2019-04-11T19:36:39+08:00 ] 127.0.0.1 /inde.php?m=admin&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+ERR: 无法加载模块:Inde
+
+[ 2019-04-11T19:37:14+08:00 ] 127.0.0.1 /inde.php?m=admin&c=login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+ERR: 无法加载模块:Inde
+

@@ -20,9 +20,9 @@
         </div>
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a href="#">管理员</a></li>
+                <li><a href="#"><?= $_SESSION['userInfo']['uname']?></a></li>
                 <li><a href="#">修改密码</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="/index.php?m=admin&c=login&a=logout">退出</a></li>
             </ul>
         </div>
     </div>
@@ -86,7 +86,16 @@
                                     <input class="common-text required" id="title" name="cname" size="50" value="" type="text">
                                 </td>
                             </tr>
-                            
+                            <tr>
+                            <th width="120"><i class="require-red">*</i>指定版主：</th>
+                            <td>
+                                <select name="uid" id="catid" class="required">
+                                    <?php foreach($users as $user): ?>
+                                    <option value="<?=$user['uid']?>"><?=$user['uname']?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
                             <tr>
                                 <th></th>
                                 <td>

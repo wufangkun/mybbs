@@ -3,7 +3,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class PartController extends Controller
+class PartController extends CommonController
 {
     // 添加分区--表单
     public function create()

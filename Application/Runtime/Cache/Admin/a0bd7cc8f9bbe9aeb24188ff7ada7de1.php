@@ -20,9 +20,9 @@
         </div>
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a href="#"><?= $_SESSION['userInfo']['uname']?></a></li>
+                <li><a href="#">管理员</a></li>
                 <li><a href="#">修改密码</a></li>
-                <li><a href="/index.php?m=admin&c=login&a=logout">退出</a></li>
+                <li><a href="#">退出</a></li>
             </ul>
         </div>
     </div>
@@ -61,24 +61,41 @@
     </div>
     <!--/sidebar-->
 
-<!--/sidebar-->
-    <div class="main-wrap">
+<div class="main-wrap">
 
         <div class="crumb-wrap">
             <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">作品管理</a><span class="crumb-step">&gt;</span><span>新增作品</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="/index.php?m=admin&c=part&a=save" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                <form action="/index.php?m=admin&c=cate&a=update&cid=<?=$cate['cid']?>" method="post" id="myform" name="myform" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
-                        <tbody>
+                        <tbody><tr>
+                            <th width="120"><i class="require-red">*</i>所属分区：</th>
+                            <td>
+                                <select name="pid" id="catid" class="required">
+                                	<?php foreach($parts as $part): ?>
+                                    <option value="<?=$part['pid']?>"><?=$part['pname']?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
                             <tr>
-                                <th><i class="require-red">*</i>分区名称：</th>
+                                <th><i class="require-red">*</i>板块名称：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="pname" size="50" value="" type="text">
+                                    <input class="common-text required" id="title" name="cname" size="50" value="<?=$cate['cname']?>" type="text">
                                 </td>
                             </tr>
-                            
+                            <tr>
+                            <th width="120"><i class="require-red">*</i>指定版主：</th>
+                            <td>
+                                <select name="uid" id="catid" class="required">
+                                    <?php foreach($users as $user): ?>
+                                    <option value="<?=$user['uid']?>"><?=$user['uname']?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                        </tr>
                             <tr>
                                 <th></th>
                                 <td>
@@ -92,7 +109,6 @@
         </div>
 
     </div>
-    <!--/main-->
 
 </div>
 </body>

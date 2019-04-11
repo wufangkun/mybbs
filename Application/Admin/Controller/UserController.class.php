@@ -4,7 +4,7 @@ namespace Admin\Controller;
 use Think\Controller;
 use Think\Image;
 
-class UserController extends Controller
+class UserController extends CommonController
 {
     // 显示表单
     public function create()

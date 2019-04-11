@@ -3,7 +3,7 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class CateController extends Controller
+class CateController extends CommonController
 {
     // 添加板块
     public function create()
@@ -11,6 +11,10 @@ class CateController extends Controller
     	// 获取所有分区
     	$parts = M('bbs_part')->select();
 
+        // 获取用户信息
+        $users = M('bbs_user')->where("auth<3")->select();
+
+        $this->assign('users', $users);
     	$this->assign('parts', $parts);
     	$this->display(); // View/Cate/create.html
     }
@@ -55,7 +59,14 @@ class CateController extends Controller
     // 删除板块
     public function del()
     {
+        $cid = $_GET['cid'];
+        $row = M('bbs_cate')->delete($cid);
 
+        if ($row) {
+            $this->success('删除成功！');
+        } else {
+            $this->error('删除失败！');
+        }
     }
     
 
@@ -63,12 +74,28 @@ class CateController extends Controller
     // 修改板块
     public function edit()
     {
+        $cid = $_GET['cid'];
+        $cate = M('bbs_cate')->find($cid);
+        $parts = M('bbs_part')->select();
+        $users = M('bbs_user')->where("auth<3")->select();
 
+        $this->assign('users', $users);
+        $this->assign('parts', $parts);
+        $this->assign('cate', $cate);
+        $this->display(); // View/Cate/edit.html
     }
 
     public function update()
     {
+        $cid = $_GET['cid'];
 
+        $row = M('bbs_cate')->where("cid=$cid")->save($_POST);
+        
+        if ($row) {
+            $this->success('修改成功！');
+        } else {
+            $this->error('修改失败！');
+        }
     }
 
 
