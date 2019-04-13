@@ -1,0 +1,34 @@
+<include file="Common/header"/>
+<!--内容部分start-->
+		<div class="content">			
+			<form action="/index.php?m=home&c=post&a=save" method="post">
+				<table height="60">
+					<tr>
+						<td><label>所属板块:</label></td>
+						<td>
+							<select name="cid">
+								<?php foreach($cates as $k=>$v): ?>
+								<option value="<?=$k?>"><?=$v?></option>
+								<?php endforeach; ?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label>标题:</label></td>
+						<td><input type="text" name="title" size="50"></td>
+					</tr>
+					<tr>
+						<td><label>内容：</label></td>
+						<td><textarea name="content" rows="12" cols="80"></textarea></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="发贴" style="width:100px;height:30px;"></td>
+					</tr>
+					
+				</table>
+			</form>
+				
+		</div>
+        <!--内容部分end-->
+
+<include file="Common/footer"/>

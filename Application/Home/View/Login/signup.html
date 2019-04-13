@@ -1,0 +1,37 @@
+<include file="Common/header"/>
+
+<!--内容部分start-->
+		<div class="content">			
+			<form action="/index.php?m=home&c=login&a=register" method="post">
+				<table align="center" width="300" height="60">
+					<tr>
+						<td><label>用户名:</label></td>
+						<td><input type="text" name="uname"></td>
+					</tr>
+					<tr>
+						<td><label>密码:</label></td>
+						<td><input type="password" name="upwd"></td>
+					</tr>
+					<tr>
+						<td><label>确认密码:</label></td>
+						<td><input type="password" name="reupwd"></td>
+					</tr>
+					<tr>
+						<td><label>手机号:</label></td>
+						<td><input type="text" name="tel"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" value="注册">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="reset" name="重置">
+						</td>
+					</tr>
+					
+				</table>
+			</form>
+				
+		</div>
+		<!--内容部分end-->
+
+<include file="Common/footer"/>

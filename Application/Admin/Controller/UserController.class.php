@@ -149,7 +149,7 @@ class UserController extends CommonController
     		$data['uface'] = $this->doUp(); // 处理上传文件
     		$this->doSm(); // 生成缩略图
     	}
-    	
+        
 
     	$row = M('bbs_user')->where("uid=$uid")->save( $data );
 

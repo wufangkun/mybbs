@@ -14,11 +14,11 @@
                 <ul class="admin_items">
                     <li>
                         <label for="user">用户名：</label>
-                        <input type="text" name="uname" autocomplete="off" value="" id="user" size="40" class="admin_input_style" />
+                        <input type="text" name="uname" autocomplete="off" value="" id="user" size="35" class="admin_input_style" />
                     </li>
                     <li>
                         <label for="pwd">密码：</label>
-                        <input type="password" name="upwd" value="" id="pwd" size="40" class="admin_input_style" />
+                        <input type="password" name="upwd" value="" id="pwd" size="35" class="admin_input_style" />
                     </li>
                     <li>
                         <label for="pwd">验证码：</label>

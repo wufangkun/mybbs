@@ -1,0 +1,54 @@
+<include file="Common/header"/>
+<!--内容部分start-->
+		<div class="content">			
+			<!--发帖按钮start-->
+			<div class="send_btn">
+				<div class="send">
+					<a href="/index.php?m=home&c=post&a=create">
+					<img src="/Public/Home/images/pn_post.png" />
+					</a>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+			<!--发帖按钮end-->
+			
+			<!--帖子列表部分start-->
+			<div class="post_list" >
+				
+				<!--帖子列表标题部分start-->
+				<div class="post_title">
+					<table cellspacing=0 cellpadding=0 width='100%'>
+						<tr>
+							<th class="list_title">帖子标题</th>
+							<th class="list_author">作者</th>
+							<th class="list_count">回复/查看</th>
+							<th class="list_ptime">最后发表</th>
+						</tr>
+					</table>
+				</div>
+				<!--帖子列表标题部分end-->
+				
+				<!--帖子列表内容部分start-->
+				<div class="post_content">
+					<table cellspacing=0 cellpadding=0 width='100%'>
+					<?php foreach($posts as $k=>$post): ?>
+						<tr>
+							<td class="list_title"><a href="post.html"><?=$post['title'] ?></a></td>
+							<td class="list_author"><?=$users[ $post['uid'] ] ?></td>
+							<td class="list_count"><?=$post['rep_cnt'] ?>/<?=$post['view_cnt'] ?></td>
+							<td class="list_ptime"><?=date('Y-m-d H:i:s',$post['updated_at']) ?></td>
+						</tr>
+					<?php endforeach; ?>	
+					</table>
+				</div>
+				<!--帖子列表内容部分end-->
+				
+			</div>
+			<!--帖子列表部分end-->
+			
+
+            
+        </div>
+        <!--内容部分end-->
+
+<include file="Common/footer"/>
